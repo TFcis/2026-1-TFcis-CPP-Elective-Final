@@ -1,0 +1,65 @@
+# test_name gen_line_number gen_line_content
+0-01	  6	manual example-1.in
+0-02	  7	manual example-2.in
+0-03	  8	manual example-3.in
+1-01	 11	manual sub1-zero.in
+1-02	 12	gen n1 1
+1-03	 13	gen n1 2
+1-04	 14	gen n1 3
+1-05	 15	gen n1 4
+1-06	 16	gen n1 5
+1-07	 17	gen n1 6
+1-08	 18	gen n1-self 1
+1-09	 19	gen n1-self 2
+1-10	 20	gen n1-self 3
+1-11	 21	gen n1-self 4
+2-01	 24	gen unique-same 0 1
+2-02	 25	gen unique-same 1 1
+2-03	 26	gen unique-same 2 1
+2-04	 27	gen unique-same 3 1
+2-05	 28	gen unique-same 4 1
+2-06	 29	gen unique-same 5 1
+2-07	 30	gen unique-same 6 1
+2-08	 31	gen unique-same 7 1
+2-09	 32	gen unique-same 8 1
+2-10	 33	gen unique-same 9 1
+3-01	 36	gen unique-lead0 0 1
+3-02	 37	gen unique-lead0 0 2
+3-03	 38	gen unique-lead0 0 3
+3-04	 39	gen unique-lead0 0 4
+3-05	 40	gen unique-lead0 0 5
+3-06	 41	gen unique-lead0 50 6
+3-07	 42	gen unique-lead0 100 7
+3-08	 43	gen unique-lead0 100 8
+3-09	 44	gen unique-lead0 200 9
+3-10	 45	gen unique-lead0 250 10
+4-01	 50	gen unique 0 1
+4-02	 51	gen unique 0 2
+4-03	 52	gen unique 0 3
+4-04	 53	gen unique 0 4
+4-05	 54	gen unique 0 5
+4-06	 55	gen unique 0 6
+4-07	 56	gen unique 0 7
+4-08	 57	gen unique 50 8
+4-09	 58	gen unique 100 9
+4-10	 59	gen unique 150 10
+4-11	 60	gen unique 200 11
+4-12	 61	gen unique 254 12
+4-13	 62	gen unique 254 13
+4-14	 63	gen unique 254 14
+5-01	 68	gen ambiguous 1 1
+5-02	 69	gen ambiguous 2 2
+5-03	 70	gen ambiguous 2 3
+5-04	 71	gen ambiguous 3 4
+5-05	 72	gen ambiguous 3 5
+5-06	 73	gen ambiguous 4 6
+5-07	 74	gen ambiguous 5 7
+5-08	 75	gen ambiguous 5 8
+6-01	 79	gen impossible 0 1
+6-02	 80	gen impossible 0 2
+6-03	 81	gen impossible 0 3
+6-04	 82	gen impossible 0 4
+6-05	 83	gen impossible 100 5
+6-06	 84	gen impossible 100 6
+6-07	 85	gen impossible 200 7
+6-08	 86	gen impossible 253 8

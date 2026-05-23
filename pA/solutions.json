@@ -1,5 +1,29 @@
 {
 	"correct.cpp": {
 		"verdict": "model_solution"
+	},
+	"correct_bitset.cpp": {
+		"verdict": "correct"
+	},
+	"wa_no_pad.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_pad_bug.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_no_repeat_b.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_ab_swap.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_first_match.cpp": {
+		"verdict": "incorrect"
+	},
+	"tle_slow.cpp": {
+		"verdict": "time_limit"
+	},
+	"partial_sub1.cpp": {
+		"verdict": "incorrect"
 	}
 }

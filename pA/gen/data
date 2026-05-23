@@ -1,8 +1,86 @@
 # see https://github.com/ioi-2017/tps/blob/master/docs/README.md#gendata
-# TODO
+# 1A2B (Bulls and Cows) test data
+# n <= 255; guess is 6-digit (0..999999); A, B in [0,6], A+B <= 6
+
 @subtask samples
 manual example-1.in
+manual example-2.in
+manual example-3.in
+
+@subtask subtask1
+manual sub1-zero.in
+gen n1 1
+gen n1 2
+gen n1 3
+gen n1 4
+gen n1 5
+gen n1 6
+gen n1-self 1
+gen n1-self 2
+gen n1-self 3
+gen n1-self 4
+
+@subtask subtask2
+gen unique-same 0 1
+gen unique-same 1 1
+gen unique-same 2 1
+gen unique-same 3 1
+gen unique-same 4 1
+gen unique-same 5 1
+gen unique-same 6 1
+gen unique-same 7 1
+gen unique-same 8 1
+gen unique-same 9 1
+
+@subtask subtask3
+gen unique-lead0 0 1
+gen unique-lead0 0 2
+gen unique-lead0 0 3
+gen unique-lead0 0 4
+gen unique-lead0 0 5
+gen unique-lead0 50 6
+gen unique-lead0 100 7
+gen unique-lead0 100 8
+gen unique-lead0 200 9
+gen unique-lead0 250 10
+
+@subtask subtask4
+@include subtask2
+@include subtask3
+gen unique 0 1
+gen unique 0 2
+gen unique 0 3
+gen unique 0 4
+gen unique 0 5
+gen unique 0 6
+gen unique 0 7
+gen unique 50 8
+gen unique 100 9
+gen unique 150 10
+gen unique 200 11
+gen unique 254 12
+gen unique 254 13
+gen unique 254 14
+
+@subtask subtask5
+@include subtask4
+@include subtask1
+gen ambiguous 1 1
+gen ambiguous 2 2
+gen ambiguous 2 3
+gen ambiguous 3 4
+gen ambiguous 3 5
+gen ambiguous 4 6
+gen ambiguous 5 7
+gen ambiguous 5 8
 
 @subtask full
-gen	20
-gen	30
+@include subtask5
+gen impossible 0 1
+gen impossible 0 2
+gen impossible 0 3
+gen impossible 0 4
+gen impossible 100 5
+gen impossible 100 6
+gen impossible 200 7
+gen impossible 253 8

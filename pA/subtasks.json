@@ -1,6 +1,6 @@
 {
-    "global_validators": [
-        "validator.cpp"
+    "subtask_sensitive_validators": [
+        "validator.cpp {subtask}"
     ],
     "subtasks": {
         "samples": {
@@ -9,9 +9,39 @@
             "text": "範例輸入輸出",
             "validators": []
         },
-        "full": {
+        "subtask1": {
             "index": 1,
-            "score": 100,
+            "score": 15,
+            "text": "n = 1",
+            "validators": []
+        },
+        "subtask2": {
+            "index": 2,
+            "score": 15,
+            "text": "答案保證唯一，且答案六位數字全部相同",
+            "validators": []
+        },
+        "subtask3": {
+            "index": 3,
+            "score": 15,
+            "text": "答案保證唯一，且答案前兩位數字皆為 0",
+            "validators": []
+        },
+        "subtask4": {
+            "index": 4,
+            "score": 15,
+            "text": "答案保證唯一，且不會出現矛盾",
+            "validators": []
+        },
+        "subtask5": {
+            "index": 5,
+            "score": 15,
+            "text": "答案可能不唯一，但不會出現矛盾",
+            "validators": []
+        },
+        "full": {
+            "index": 6,
+            "score": 25,
             "text": "無額外限制",
             "validators": []
         }
