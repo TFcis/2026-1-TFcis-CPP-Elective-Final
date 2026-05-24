@@ -1,0 +1,21 @@
+pC verdict matrix
+Generated Mon May 25 03:19:27 JST 2026
+
+Verdict: OK = Correct, WA = Wrong Answer, TLE = Time Limit, RE = Runtime Error
+
+Solution                         | samples    | subtask1   | subtask2   | subtask3   | subtask4   | full       | Total
+---------------------------------+------------+------------+------------+------------+------------+------------+--------
+correct.cpp                      | OK 0/0     | OK 20/20   | OK 20/20   | OK 20/20   | OK 20/20   | OK 20/20   | 100/100 pts
+alt.cpp                          | OK 0/0     | OK 20/20   | OK 20/20   | OK 20/20   | OK 20/20   | OK 20/20   | 100/100 pts
+partial_sub1.cpp                 | WA 0/0     | OK 20/20   | WA 0/20    | WA 0/20    | WA 0/20    | WA 0/20    | 20/100 pts
+partial_sub2.cpp                 | WA 0/0     | WA 0/20    | OK 20/20   | WA 0/20    | WA 0/20    | WA 0/20    | 20/100 pts
+partial_sub3.cpp                 | WA 0/0     | WA 0/20    | OK 20/20   | OK 20/20   | WA 0/20    | WA 0/20    | 40/100 pts
+wa_independent_bfs.cpp           | WA 0/0     | OK 20/20   | OK 20/20   | WA 0/20    | OK 20/20   | WA 0/20    | 60/100 pts
+wa_steal_later.cpp               | WA 0/0     | OK 20/20   | WA 0/20    | WA 0/20    | OK 20/20   | WA 0/20    | 40/100 pts
+wa_claim_obstacle.cpp            | WA 0/0     | WA 0/20    | OK 20/20   | OK 20/20   | WA 0/20    | WA 0/20    | 40/100 pts
+wa_same_round_propagate.cpp      | WA 0/0     | OK 20/20   | WA 0/20    | WA 0/20    | OK 20/20   | WA 0/20    | 40/100 pts
+wa_first_wins.cpp                | WA 0/0     | OK 20/20   | WA 0/20    | WA 0/20    | OK 20/20   | WA 0/20    | 40/100 pts
+wa_third_overwrites.cpp          | OK 0/0     | OK 20/20   | OK 20/20   | WA 0/20    | OK 20/20   | WA 0/20    | 60/100 pts
+wa_adjacent_war.cpp              | WA 0/0     | OK 20/20   | WA 0/20    | WA 0/20    | OK 20/20   | WA 0/20    | 40/100 pts
+wa_sort_col_first.cpp            | OK 0/0     | OK 20/20   | OK 20/20   | WA 0/20    | WA 0/20    | WA 0/20    | 40/100 pts
+wa_dim_swap.cpp                  | OK 0/0     | WA 0/20    | WA 0/20    | WA 0/20    | WA 0/20    | WA 0/20    | 0/100 pts

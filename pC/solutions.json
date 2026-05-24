@@ -1,5 +1,93 @@
 {
 	"correct.cpp": {
 		"verdict": "model_solution"
+	},
+	"alt.cpp": {
+		"verdict": "correct"
+	},
+	"partial_sub1.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask1": "correct"
+		}
+	},
+	"partial_sub2.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask2": "correct"
+		}
+	},
+	"partial_sub3.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask2": "correct",
+			"subtask3": "correct"
+		}
+	},
+	"wa_independent_bfs.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask1": "correct",
+			"subtask2": "correct",
+			"subtask4": "correct"
+		}
+	},
+	"wa_steal_later.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask1": "correct",
+			"subtask4": "correct"
+		}
+	},
+	"wa_claim_obstacle.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask2": "correct",
+			"subtask3": "correct"
+		}
+	},
+	"wa_same_round_propagate.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask1": "correct",
+			"subtask4": "correct"
+		}
+	},
+	"wa_first_wins.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask1": "correct",
+			"subtask4": "correct"
+		}
+	},
+	"wa_third_overwrites.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"samples": "correct",
+			"subtask1": "correct",
+			"subtask2": "correct",
+			"subtask4": "correct"
+		}
+	},
+	"wa_adjacent_war.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask1": "correct",
+			"subtask4": "correct"
+		}
+	},
+	"wa_sort_col_first.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"samples": "correct",
+			"subtask1": "correct",
+			"subtask2": "correct"
+		}
+	},
+	"wa_dim_swap.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"samples": "correct"
+		}
 	}
 }

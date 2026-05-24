@@ -1,8 +1,128 @@
 # see https://github.com/ioi-2017/tps/blob/master/docs/README.md#gendata
-# TODO
+
+# === Subtask 0: samples (hand-crafted) ===
 @subtask samples
 manual example-1.in
+manual example-2.in
+manual example-3.in
 
+# === Subtask 1: only 1 slime (k = 1) ===
+@subtask subtask1
+gen single 1 1 0 1
+gen single 1 10 0 2
+gen single 1 100 0 3
+gen single 1 100 50 4
+gen single 10 1 0 5
+gen single 100 1 50 6
+gen single 5 5 0 7
+gen single 10 10 30 8
+gen single 20 20 50 9
+gen single 50 50 30 10
+gen single 100 100 0 11
+gen single 100 100 30 12
+gen single 100 100 50 13
+gen single 100 100 70 14
+gen single 100 100 90 15
+gen single 50 100 20 16
+gen single 100 50 40 17
+gen single 7 13 25 18
+
+# === Subtask 2: n = 1 and no obstacles ===
+@subtask subtask2
+gen onerow 1 1 1
+gen onerow 2 1 2
+gen onerow 2 2 3
+gen onerow 5 2 4
+gen onerow 10 1 5
+gen onerow 10 3 6
+gen onerow 10 5 7
+gen onerow 50 1 8
+gen onerow 50 25 9
+gen onerow 100 1 10
+gen onerow 100 2 11
+gen onerow 100 50 12
+gen onerow 100 100 13
+
+# === Subtask 3: no obstacles ===
+@subtask subtask3
+@include subtask2
+gen noobs 2 2 1 1
+gen noobs 2 2 2 2
+gen noobs 2 2 4 3
+gen noobs 3 3 1 4
+gen noobs 3 3 9 5
+gen noobs 5 5 1 6
+gen noobs 5 5 5 7
+gen noobs 5 5 25 8
+gen noobs 10 10 1 9
+gen noobs 10 10 2 10
+gen noobs 10 10 5 11
+gen noobs 10 10 50 12
+gen noobs 100 100 1 13
+gen noobs 100 100 2 14
+gen noobs 100 100 10 15
+gen noobs 100 100 50 16
+gen noobs 100 100 100 17
+gen noobs 50 100 30 18
+gen cluster 5 5 9 1 19
+gen cluster 10 10 25 2 20
+
+# === Subtask 4: all slimes physically isolated by obstacle walls ===
+@subtask subtask4
+@include subtask1
+gen chambers 3 3 1 1 1 1
+gen chambers 5 5 2 2 4 2
+gen chambers 5 5 2 1 2 3
+gen chambers 10 10 2 2 4 4
+gen chambers 10 10 3 3 9 5
+gen chambers 21 21 3 3 9 6
+gen chambers 21 21 3 3 5 7
+gen chambers 50 50 5 5 25 8
+gen chambers 100 100 2 2 4 9
+gen chambers 100 100 5 5 25 10
+gen chambers 100 100 10 10 100 11
+gen chambers 100 100 10 1 10 12
+gen chambers 100 100 1 10 10 13
+gen chambers 100 100 10 5 50 14
+gen chambers 99 99 10 10 100 15
+gen chambers 50 100 5 10 50 16
+gen chambers 100 50 10 5 50 17
+gen chambers 30 100 3 10 30 18
+
+# === Full: no additional constraints ===
 @subtask full
-gen	20
-gen	30
+@include samples
+@include subtask1
+@include subtask2
+@include subtask3
+@include subtask4
+gen random 10 10 30 5 1
+gen random 10 10 50 10 2
+gen random 50 50 20 30 3
+gen random 100 100 0 100 4
+gen random 100 100 10 100 5
+gen random 100 100 20 50 6
+gen random 100 100 30 100 7
+gen random 100 100 50 50 8
+gen random 100 100 70 100 9
+gen random 100 100 90 50 10
+gen cluster 10 10 9 1 11
+gen cluster 10 10 25 2 12
+gen cluster 100 100 100 5 13
+gen cluster 100 100 100 10 14
+gen cluster 5 5 25 2 15
+gen corner 10 10 4 16
+gen corner 100 100 4 17
+gen corner 100 100 100 18
+gen adjacent 5 5 13 19
+gen adjacent 10 10 50 20
+gen adjacent 100 100 100 21
+gen bfsbreak 1 22
+gen bfsbreak 2 23
+gen bfsbreak 3 24
+gen bfsbreak 4 25
+gen bfsbreak 5 26
+gen random 100 100 5 100 27
+gen random 100 100 95 100 28
+gen single 100 100 40 29
+gen noobs 100 100 100 30

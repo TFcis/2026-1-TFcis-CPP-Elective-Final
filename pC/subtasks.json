@@ -2,6 +2,9 @@
     "global_validators": [
         "validator.cpp"
     ],
+    "subtask_sensitive_validators": [
+        "validator.cpp {subtask}"
+    ],
     "subtasks": {
         "samples": {
             "index": 0,
@@ -9,9 +12,33 @@
             "text": "範例輸入輸出",
             "validators": []
         },
-        "full": {
+        "subtask1": {
             "index": 1,
-            "score": 100,
+            "score": 20,
+            "text": "只有 1 隻史萊姆",
+            "validators": []
+        },
+        "subtask2": {
+            "index": 2,
+            "score": 20,
+            "text": "地圖只有一列（$1 \\times m$）且沒有障礙物",
+            "validators": []
+        },
+        "subtask3": {
+            "index": 3,
+            "score": 20,
+            "text": "沒有障礙物",
+            "validators": []
+        },
+        "subtask4": {
+            "index": 4,
+            "score": 20,
+            "text": "所有史萊姆都被障礙物完全物理隔離",
+            "validators": []
+        },
+        "full": {
+            "index": 5,
+            "score": 20,
             "text": "無額外限制",
             "validators": []
         }
