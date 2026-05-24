@@ -2,6 +2,9 @@
     "global_validators": [
         "validator.cpp"
     ],
+    "subtask_sensitive_validators": [
+        "validator.cpp {subtask}"
+    ],
     "subtasks": {
         "samples": {
             "index": 0,
@@ -9,9 +12,45 @@
             "text": "範例輸入輸出",
             "validators": []
         },
-        "full": {
+        "subtask1": {
             "index": 1,
-            "score": 100,
+            "score": 10,
+            "text": "$|S| \\leq 100$，僅有刪除，$|A| = 1$",
+            "validators": []
+        },
+        "subtask2": {
+            "index": 2,
+            "score": 10,
+            "text": "$|S| \\leq 100$，僅有替換，$|B| = 1$",
+            "validators": []
+        },
+        "subtask3": {
+            "index": 3,
+            "score": 10,
+            "text": "僅有刪除",
+            "validators": []
+        },
+        "subtask4": {
+            "index": 4,
+            "score": 10,
+            "text": "僅有替換",
+            "validators": []
+        },
+        "subtask5": {
+            "index": 5,
+            "score": 20,
+            "text": "$S$ 是由一個長度不超過 $8$ 的字串循環重複若干次而成（重複次數為正整數）",
+            "validators": []
+        },
+        "subtask6": {
+            "index": 6,
+            "score": 20,
+            "text": "$|S| \\leq 2000$",
+            "validators": []
+        },
+        "full": {
+            "index": 7,
+            "score": 20,
             "text": "無額外限制",
             "validators": []
         }

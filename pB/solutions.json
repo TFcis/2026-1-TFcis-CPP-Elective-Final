@@ -1,5 +1,35 @@
 {
 	"correct.cpp": {
 		"verdict": "model_solution"
+	},
+	"alt.cpp": {
+		"verdict": "correct"
+	},
+	"partial_sub1.cpp": {
+		"verdict": "incorrect"
+	},
+	"partial_sub2.cpp": {
+		"verdict": "incorrect"
+	},
+	"partial_del_only.cpp": {
+		"verdict": "incorrect"
+	},
+	"partial_rep_only.cpp": {
+		"verdict": "incorrect"
+	},
+	"partial_cyclic.cpp": {
+		"verdict": "incorrect"
+	},
+	"tle_quadratic.cpp": {
+		"verdict": "time_limit"
+	},
+	"wa_replace_then_delete.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_null_literal.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_cycle_one_rep.cpp": {
+		"verdict": "incorrect"
 	}
 }

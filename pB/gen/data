@@ -1,8 +1,137 @@
 # see https://github.com/ioi-2017/tps/blob/master/docs/README.md#gendata
-# TODO
+# pB test data
+# n = |S| <= 1e6; chars in [33, 126]; A, B disjoint, distinct within; '(null)' = empty.
+
 @subtask samples
 manual example-1.in
+manual example-2.in
+manual example-3.in
+
+@subtask subtask1
+# |S| <= 100, deletion only, |A| = 1
+gen random 1 lower a _ s1
+gen random 1 lower b _ s2
+gen random 1 alpha Q _ s3
+gen random 50 lower a _ s4
+gen random 100 a a _ s5
+gen random 100 lower a _ s6
+gen random 100 alpha Q _ s7
+gen random 100 lower z _ s8
+gen random 100 ascii a _ s9
+
+@subtask subtask2
+# |S| <= 100, replacement only, |B| = 1
+gen random 1 lower _ a s1
+gen random 1 lower _ b s2
+gen random 1 alpha _ Q s3
+gen random 50 lower _ a s4
+gen random 100 a _ a s5
+gen random 100 lower _ a s6
+gen random 100 alpha _ Q s7
+gen random 100 ascii _ Q s8
+gen random 100 ascii _ z s9
+
+@subtask subtask3
+# Deletion only, |S| up to 1e6
+@include subtask1
+gen random 1000 lower abcde _ s1
+gen random 10000 alpha abcdefghij _ s2
+gen random 100000 lower a _ s3
+gen random 100000 ascii ABCDEFGHIJKLMNOPQRSTUVWXYZ _ s4
+gen random 1000000 a a _ s5
+gen random 1000000 lower a _ s6
+gen random 1000000 ascii lower _ s7
+gen random 1000000 alnum digit _ s8
+gen random 1000000 ascii Q _ s9
+gen random 1000000 ascii ascii _ s10
+gen nullabuse 1000 B s11
+gen nullabuse 100000 B s12
+gen nullabuse 1000000 B s13
+
+@subtask subtask4
+# Replacement only, |S| up to 1e6
+@include subtask2
+gen random 1000 lower _ abcde s1
+gen random 10000 alpha _ abcdefghij s2
+gen random 100000 lower _ a s3
+gen random 100000 ascii _ ABCDEFGHIJKLMNOPQRSTUVWXYZ s4
+gen random 1000000 a _ a s5
+gen random 1000000 lower _ a s6
+gen random 1000000 ascii _ lower s7
+gen random 1000000 alnum _ digit s8
+gen random 1000000 ascii _ Q s9
+gen random 1000000 alnum _ Q s10
+gen random 1000000 ascii _ ascii s11
+gen nullabuse 1000 A s12
+gen nullabuse 100000 A s13
+gen nullabuse 1000000 A s14
+
+@subtask subtask5
+# S = T repeated k times, 1 <= |T| <= 8, n = k * |T| <= 1e6.
+# Genuine cycles (no fake-out):
+gen cyclic a 1000000 _ _ s1
+gen cyclic a 1000000 a _ s2
+gen cyclic ab 500000 _ a s3
+gen cyclic ab 500000 a b s4
+gen cyclic abc 333333 _ _ s5
+gen cyclic abcd 250000 _ _ s6
+gen cyclic abcde 200000 _ _ s7
+gen cyclic abcdef 166666 _ _ s8
+gen cyclic abcdefg 142857 _ _ s9
+gen cyclic abcdefgh 125000 _ _ s10
+# p=1 fake-out (T starts with two equal chars, T not all-one-char):
+gen cyclic aab 333333 _ _ s11
+gen cyclic aabc 250000 _ _ s12
+gen cyclic aaabcde 142857 _ _ s13
+gen cyclic aabcdefg 125000 _ _ s14
+# p=2 fake-out (T starts XYXY..., T not 2-periodic):
+gen cyclic ababc 200000 _ _ s15
+gen cyclic ababcd 166666 _ _ s16
+gen cyclic abababc 142857 _ _ s17
+gen cyclic ababcdef 125000 _ _ s18
+# p=3 fake-out (T starts XYZXYZ..., T not 3-periodic):
+gen cyclic abcabca 142857 _ _ s19
+gen cyclic abcabcd 142857 _ _ s20
+gen cyclic abcabcde 125000 _ _ s21
+# Q-interaction within a cyclic block (combined with fake-outs):
+gen cyclic aabQ 250000 Q ab s22
+gen cyclic QQabcde 125000 Q abcde s23
+gen cyclic abcQ 250000 _ Q s24
+gen cyclic abcdef 166666 Q abcdef s25
+gen cyclic abcdefgh 125000 abcd efgh s26
+
+@subtask subtask6
+# |S| <= 2000
+@include subtask1
+@include subtask2
+gen random 2000 lower abc def s1
+gen random 2000 alpha abc def s2
+gen random 2000 ascii ABCDEFG abcdefg s3
+gen random 2000 a a b s4
+gen random 2000 abcQ Q abc s5
+gen random 2000 abcQ abc Q s6
+gen random 2000 ascii lower upper s7
+gen random 2000 alnum digit lower s8
+gen random 2000 alnum digit lower s9
+gen random 2000 ascii Q lower s10
+gen nullabuse 2000 both s11
+gen nullabuse 2000 A s12
+gen nullabuse 2000 B s13
 
 @subtask full
-gen	20
-gen	30
+@include subtask3
+@include subtask4
+@include subtask5
+@include subtask6
+gen random 1000000 lower abc def s1
+gen random 1000000 alpha abc def s2
+gen random 1000000 ascii lower upper s3
+gen random 1000000 ascii ABCDEFGHIJ abcdefghij s4
+gen random 1000000 alnum digit lower s5
+gen random 1000000 abcQ Q abc s6
+gen random 1000000 abcQ abc Q s7
+gen random 1000000 a a b s8
+gen random 1000000 ascii ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz s9
+gen random 1000000 ascii Q lower s10
+gen nullabuse 1000000 both s11
+gen nullabuse 1000000 both s12
