@@ -3,12 +3,21 @@
 		"verdict": "model_solution"
 	},
 	"correct_bitset.cpp": {
-		"verdict": "correct"
+		"verdict": "time_limit"
 	},
 	"wa_no_pad.cpp": {
 		"verdict": "incorrect"
 	},
 	"wa_pad_bug.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_octal.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_only_6a0b.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_stop_6a0b.cpp": {
 		"verdict": "incorrect"
 	},
 	"wa_no_repeat_b.cpp": {
@@ -18,6 +27,15 @@
 		"verdict": "incorrect"
 	},
 	"wa_first_match.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_b_cartesian.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_no_impossible.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_capital.cpp": {
 		"verdict": "incorrect"
 	},
 	"tle_slow.cpp": {

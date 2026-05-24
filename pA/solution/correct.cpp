@@ -28,9 +28,12 @@ int main() {
 	cin >> n;
 	vector<Round> rounds(n);
 	for (int i = 0; i < n; i++) {
-		int g, a, b;
+		// Guess is read as a fixed-length 6-digit string -- the leading-zero
+		// representation is part of the contract, so we never round-trip
+		// through an int that would drop it.
+		string g; int a, b;
 		cin >> g >> a >> b;
-		toDigits(g, rounds[i].digits);
+		for (int j = 0; j < 6; j++) rounds[i].digits[j] = g[j] - '0';
 		for (int j = 0; j < 10; j++) rounds[i].counts[j] = 0;
 		for (int j = 0; j < 6; j++) rounds[i].counts[rounds[i].digits[j]]++;
 		rounds[i].A = a;

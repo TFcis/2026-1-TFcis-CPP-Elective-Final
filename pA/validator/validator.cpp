@@ -18,6 +18,12 @@ static void toDigits(int x, int d[6]) {
 	for (int i = 5; i >= 0; i--) { d[i] = x % 10; x /= 10; }
 }
 
+static int parseGuess(const string& s) {
+	int x = 0;
+	for (size_t i = 0; i < s.size(); i++) x = x * 10 + (s[i] - '0');
+	return x;
+}
+
 // Returns true iff the 6-digit number `candidate` (with leading zeros) is
 // consistent with every recorded round under the 1A2B rule (repeated digits
 // matched via min(count_in_guess, count_in_candidate) summed over digits).
@@ -61,7 +67,9 @@ int main(int argc, char* argv[]) {
 	inf.readEoln();
 
 	for (int i = 1; i <= n; i++) {
-		int guess = inf.readInt(0, 999999, "guess_" + to_string(i));
+		// Each guess must be written as exactly 6 decimal digits (leading zeros required).
+		string g_str = inf.readToken("[0-9]{6}", "guess_" + to_string(i));
+		int guess = parseGuess(g_str);
 		inf.readSpace();
 		int a = inf.readInt(0, 6, "A_" + to_string(i));
 		inf.readSpace();

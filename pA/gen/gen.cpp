@@ -50,11 +50,10 @@ static vector<int> filterCandidates(const vector<int>& cands, int guess, int A, 
 }
 
 static void printRounds(const vector<tuple<int,int,int> >& rounds) {
-	cout << rounds.size() << '\n';
+	printf("%d\n", (int)rounds.size());
 	for (size_t i = 0; i < rounds.size(); i++) {
-		cout << get<0>(rounds[i]) << ' '
-		     << get<1>(rounds[i]) << ' '
-		     << get<2>(rounds[i]) << '\n';
+		printf("%06d %d %d\n",
+			get<0>(rounds[i]), get<1>(rounds[i]), get<2>(rounds[i]));
 	}
 }
 
@@ -130,10 +129,10 @@ int main(int argc, char* argv[]) {
 		int answer = (int)rnd.next(0, 999999);
 		int g = (int)rnd.next(0, 999999);
 		pair<int,int> ab = computeAB(g, answer);
-		cout << 1 << '\n' << g << ' ' << ab.first << ' ' << ab.second << '\n';
+		printf("1\n%06d %d %d\n", g, ab.first, ab.second);
 	} else if (mode == "n1-self") {
 		int answer = (int)rnd.next(0, 999999);
-		cout << 1 << '\n' << answer << " 6 0\n";
+		printf("1\n%06d 6 0\n", answer);
 	} else if (mode == "unique-same") {
 		if (argc < 3) { cerr << "unique-same requires digit\n"; return 1; }
 		int d = atoi(argv[2]);

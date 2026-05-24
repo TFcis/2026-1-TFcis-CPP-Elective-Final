@@ -9,6 +9,8 @@ manual example-3.in
 
 @subtask subtask1
 manual sub1-zero.in
+manual sub1-trick.in
+manual sub1-octal.in
 gen n1 1
 gen n1 2
 gen n1 3
@@ -31,8 +33,12 @@ gen unique-same 6 1
 gen unique-same 7 1
 gen unique-same 8 1
 gen unique-same 9 1
+gen unique-same 0 200 11
+gen unique-same 5 250 12
+gen unique-same 9 250 13
 
 @subtask subtask3
+manual sub1-zero.in
 gen unique-lead0 0 1
 gen unique-lead0 0 2
 gen unique-lead0 0 3
