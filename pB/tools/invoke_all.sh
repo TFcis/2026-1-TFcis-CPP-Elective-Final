@@ -4,7 +4,7 @@
 set -u
 cd "$(dirname "$0")/.."
 OUT=${1:-/tmp/pB-invoke.log}
-SOLS=(correct.cpp alt.cpp partial_sub1.cpp partial_sub2.cpp partial_del_only.cpp partial_rep_only.cpp partial_cyclic.cpp tle_quadratic.cpp wa_replace_then_delete.cpp wa_null_literal.cpp wa_cycle_one_rep.cpp)
+SOLS=(correct.cpp alt.cpp partial_sub1.cpp partial_sub2.cpp partial_del_only.cpp partial_rep_only.cpp partial_cyclic.cpp tle_quadratic.cpp wa_replace_then_delete.cpp wa_null_literal.cpp wa_cycle_one_rep.cpp wa_null_s.cpp)
 {
 	for s in "${SOLS[@]}"; do
 		echo "=== $s ==="

@@ -31,5 +31,8 @@
 	},
 	"wa_cycle_one_rep.cpp": {
 		"verdict": "incorrect"
+	},
+	"wa_null_s.cpp": {
+		"verdict": "incorrect"
 	}
 }

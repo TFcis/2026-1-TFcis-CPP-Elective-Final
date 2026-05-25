@@ -4,7 +4,7 @@
 LOG=${1:-/tmp/pB-invoke.log}
 OUT=${2:-tools/results.md}
 cd "$(dirname "$0")/.."
-SOLS=(correct.cpp alt.cpp partial_sub1.cpp partial_sub2.cpp partial_del_only.cpp partial_rep_only.cpp partial_cyclic.cpp tle_quadratic.cpp wa_replace_then_delete.cpp wa_null_literal.cpp wa_cycle_one_rep.cpp)
+SOLS=(correct.cpp alt.cpp partial_sub1.cpp partial_sub2.cpp partial_del_only.cpp partial_rep_only.cpp partial_cyclic.cpp tle_quadratic.cpp wa_replace_then_delete.cpp wa_null_literal.cpp wa_cycle_one_rep.cpp wa_null_s.cpp)
 SCORES=(0 10 10 10 10 20 20 20)
 HEADERS=("samples(0)" "sub1(10)" "sub2(10)" "sub3(10)" "sub4(10)" "sub5(20)" "sub6(20)" "full(20)")
 

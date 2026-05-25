@@ -18,6 +18,7 @@ gen random 100 lower a _ s6
 gen random 100 alpha Q _ s7
 gen random 100 lower z _ s8
 gen random 100 ascii a _ s9
+gen null_s a _ s10
 
 @subtask subtask2
 # |S| <= 100, replacement only, |B| = 1
@@ -30,6 +31,7 @@ gen random 100 lower _ a s6
 gen random 100 alpha _ Q s7
 gen random 100 ascii _ Q s8
 gen random 100 ascii _ z s9
+gen null_s _ a s10
 
 @subtask subtask3
 # Deletion only, |S| up to 1e6
@@ -99,6 +101,7 @@ gen cyclic QQabcde 125000 Q abcde s23
 gen cyclic abcQ 250000 _ Q s24
 gen cyclic abcdef 166666 Q abcdef s25
 gen cyclic abcdefgh 125000 abcd efgh s26
+gen null_s _ _ s27
 
 @subtask subtask6
 # |S| <= 2000

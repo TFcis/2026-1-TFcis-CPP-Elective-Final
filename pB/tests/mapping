@@ -10,6 +10,7 @@ subtask1 1-06
 subtask1 1-07
 subtask1 1-08
 subtask1 1-09
+subtask1 1-10
 subtask2 2-01
 subtask2 2-02
 subtask2 2-03
@@ -19,6 +20,7 @@ subtask2 2-06
 subtask2 2-07
 subtask2 2-08
 subtask2 2-09
+subtask2 2-10
 subtask3 1-01
 subtask3 1-02
 subtask3 1-03
@@ -28,6 +30,7 @@ subtask3 1-06
 subtask3 1-07
 subtask3 1-08
 subtask3 1-09
+subtask3 1-10
 subtask3 3-01
 subtask3 3-02
 subtask3 3-03
@@ -50,6 +53,7 @@ subtask4 2-06
 subtask4 2-07
 subtask4 2-08
 subtask4 2-09
+subtask4 2-10
 subtask4 4-01
 subtask4 4-02
 subtask4 4-03
@@ -90,6 +94,7 @@ subtask5 5-23
 subtask5 5-24
 subtask5 5-25
 subtask5 5-26
+subtask5 5-27
 subtask6 1-01
 subtask6 1-02
 subtask6 1-03
@@ -99,6 +104,7 @@ subtask6 1-06
 subtask6 1-07
 subtask6 1-08
 subtask6 1-09
+subtask6 1-10
 subtask6 2-01
 subtask6 2-02
 subtask6 2-03
@@ -108,6 +114,7 @@ subtask6 2-06
 subtask6 2-07
 subtask6 2-08
 subtask6 2-09
+subtask6 2-10
 subtask6 6-01
 subtask6 6-02
 subtask6 6-03
@@ -130,6 +137,7 @@ full 1-06
 full 1-07
 full 1-08
 full 1-09
+full 1-10
 full 2-01
 full 2-02
 full 2-03
@@ -139,6 +147,7 @@ full 2-06
 full 2-07
 full 2-08
 full 2-09
+full 2-10
 full 3-01
 full 3-02
 full 3-03
@@ -192,6 +201,7 @@ full 5-23
 full 5-24
 full 5-25
 full 5-26
+full 5-27
 full 6-01
 full 6-02
 full 6-03

@@ -24,6 +24,11 @@ using namespace std;
 //       Targets wrong solutions that treat the literal "(null)" string
 //       as a character set instead of an empty marker.
 //
+//   null_s <a_set> <b_set> [seed_tag]
+//       Emits S = the literal 6-char string "(null)" (which is itself valid
+//       input). Targets wrong solutions that also treat S == "(null)" as
+//       "S is empty" -- the spec only marks A/B that way, never S.
+//
 // Tokens for s_pool / t_block / a_set / b_set:
 //   `_`         -> empty set
 //   `lower`     -> a..z
@@ -117,6 +122,14 @@ int main(int argc, char* argv[]) {
 		S.reserve((size_t)total);
 		for (int i = 0; i < k; i++) S += T;
 		emitCase(S, A, B);
+	} else if (mode == "null_s") {
+		if (argc < 4) {
+			cerr << "null_s <a_set> <b_set> [seed_tag]\n";
+			return 1;
+		}
+		string A = resolveAlphabet(argv[2]);
+		string B = resolveAlphabet(argv[3]);
+		emitCase("(null)", A, B);
 	} else if (mode == "nullabuse") {
 		if (argc < 5) {
 			cerr << "nullabuse <n> <which> <seed_tag>\n";
