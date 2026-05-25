@@ -1,5 +1,82 @@
 {
 	"correct.cpp": {
 		"verdict": "model_solution"
+	},
+	"correct_recheck.cpp": {
+		"verdict": "correct"
+	},
+	"correct_approach2.cpp": {
+		"verdict": "correct"
+	},
+	"partial_sub1.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"sub1": "correct"
+		}
+	},
+	"partial_sub2.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"sub2": "correct"
+		}
+	},
+	"brute_sub4.cpp": {
+		"verdict": "time_limit",
+		"except": {
+			"sub4": "correct"
+		}
+	},
+	"tle_check_m.cpp": {
+		"verdict": "time_limit",
+		"except": {
+			"sub2": "correct",
+			"sub4": "correct"
+		}
+	},
+	"tle_reset_r.cpp": {
+		"verdict": "time_limit",
+		"except": {
+			"sub4": "correct"
+		}
+	},
+	"tle_reset_break.cpp": {
+		"verdict": "time_limit",
+		"except": {
+			"sub4": "correct"
+		}
+	},
+	"tle_reset_break_rev.cpp": {
+		"verdict": "time_limit",
+		"except": {
+			"sub4": "correct"
+		}
+	},
+	"tle_prefilter.cpp": {
+		"verdict": "time_limit",
+		"except": {
+			"sub1": "correct"
+		}
+	},
+	"tle_prefilter_rev.cpp": {
+		"verdict": "time_limit",
+		"except": {
+			"sub1": "correct",
+			"sub4": "correct"
+		}
+	},
+	"wa_output_m.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_output_n.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_subsequence.cpp": {
+		"verdict": "incorrect"
+	},
+	"wa_max_min.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"sub1": "correct"
+		}
 	}
 }

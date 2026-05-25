@@ -1,8 +1,142 @@
-# see https://github.com/ioi-2017/tps/blob/master/docs/README.md#gendata
-# TODO
+# See https://github.com/ioi-2017/tps/blob/master/docs/README.md#gendata
+
 @subtask samples
 manual example-1.in
+manual example-2.in
+manual example-3.in
 
+# ------------------------------------------------------------------
+# sub1: T has exactly 1 distinct char; that char appears in S exactly m times.
+# Cover: tiny / small / medium / huge n, varied target chars (incl. ASCII 33 and 126),
+# varied filler character ranges (full, thin, single).
+@subtask sub1
+gen single 10 1 65 33 126 s1-1
+gen single 10 5 33 65 126 s1-2
+gen single 100 50 90 33 126 s1-3
+gen single 2000 1000 126 33 125 s1-4
+gen single 1000000 1 65 33 126 s1-5
+gen single 1000000 100000 65 33 126 s1-6
+gen single 1000000 100000 100 33 126 s1-7
+gen single 100000 100000 100 100 100 s1-8
+gen single 1000000 100000 50 33 33 s1-9
+gen single 1000000 100000 50 33 49 s1-10
+# m near sqrt(n) -- balanced T-length vs interval-count regime.
+gen single 1000000 1000 65 33 126 s1-11
+gen single 1000000 3162 65 33 126 s1-12
+
+# ------------------------------------------------------------------
+# sub2: |T| = 2.
+# Cover: T = "cc" (same), T = "cd" (different), extreme ASCII pair, narrow alphabet.
+@subtask sub2
+gen pair 10 1 65 66 33 126 s2-1
+gen pair 10 0 65 65 33 126 s2-2
+gen pair 1000000 1 33 126 33 126 s2-3
+gen pair 1000000 1 65 66 33 126 s2-4
+gen pair 1000000 1 65 66 65 66 s2-5
+gen pair 1000000 0 65 65 33 126 s2-6
+gen pair 1000000 0 65 65 65 65 s2-7
+gen pair 1000000 1 33 126 33 126 s2-8
+gen pair 1000000 1 80 81 80 81 s2-9
+gen pair 1000000 0 50 50 50 50 s2-10
+# Adversarial structural tests for the reset-r / early-break / prefilter family.
+# S uses only c1='A' (65) and c2='B' (66) so prefilter cannot reduce np.
+gen adv_sub2 1000000 1 65 66 a2-1
+gen adv_sub2 1000000 2 65 66 a2-2
+gen adv_sub2 1000000 3 65 66 a2-3
+gen adv_sub2 1000000 4 65 66 a2-4
+gen adv_sub2 1000000 5 65 66 a2-5
+
+# ------------------------------------------------------------------
+# sub3: S and T non-decreasing.
+# Cover: alphabet sizes 1 / 2 / 3 / few / many / all 94; extreme ASCII spans;
+# m as small as 1 and as large as 1e5.
+@subtask sub3
+gen sorted_uniform 10 3 65 90 s3-1
+gen sorted_uniform 100 10 33 126 s3-2
+gen sorted_k 1000 100 5 s3-3
+gen sorted_uniform 1000000 100000 33 126 s3-4
+gen sorted_uniform 1000000 100000 65 66 s3-5
+gen sorted_k 1000000 100000 2 s3-6
+gen sorted_k 1000000 100000 94 s3-7
+gen sorted_k 1000000 100000 10 s3-8
+gen sorted_k 1000000 50000 3 s3-9
+gen explicit2 1000000 100000 1 33 126 s3-10
+gen explicit3 1000000 100000 1 33 80 126 s3-11
+gen all94 1000000 100000 1 s3-12
+gen sorted_uniform 1000000 1 33 126 s3-13
+gen sorted_uniform 1000000 2 33 126 s3-14
+gen sorted_uniform 2000 1000 33 126 s3-15
+# m near sqrt(n): balanced regime.
+gen sorted_uniform 1000000 1000 33 126 s3-16
+gen sorted_k 1000000 1000 10 s3-17
+gen sorted_uniform 1000000 3162 33 126 s3-18
+
+# ------------------------------------------------------------------
+# sub4: |S| <= 2000.
+# Cover: n=1 boundary, m=1 / m=n boundaries, alphabet sizes 1 / 2 / 94, sorted
+# corner case, adversarial layout, manual single-char case.
+@subtask sub4
+gen rand_uniform 1 1 65 65 s4-1
+gen rand_uniform 10 5 33 126 s4-2
+gen rand_uniform 100 50 33 126 s4-3
+gen rand_k 500 100 5 s4-4
+gen rand_uniform 2000 1 33 126 s4-5
+gen rand_uniform 2000 1000 33 126 s4-6
+gen rand_uniform 2000 2000 33 126 s4-7
+gen rand_k 2000 100 2 s4-8
+gen rand_k 2000 100 94 s4-9
+gen explicit2 2000 100 0 33 126 s4-10
+gen sorted_uniform 2000 1000 33 126 s4-11
+gen single 2000 100 65 33 126 s4-12
+gen worst 2000 500 5 s4-13
+gen rand_uniform 2000 2 33 126 s4-14
+gen all94 2000 100 0 s4-15
+
+# ------------------------------------------------------------------
+# full: no extra constraints. Roll in every earlier subtask, then add extreme
+# alphabets, adversarial worst-case layouts, and stress sizes.
 @subtask full
-gen	20
-gen	30
+@include sub1
+@include sub2
+@include sub3
+@include sub4
+gen rand_uniform 1000000 100000 33 126 f-1
+gen rand_uniform 1000000 100000 65 90 f-2
+gen rand_k 1000000 100000 5 f-3
+gen rand_k 1000000 100000 94 f-4
+gen rand_k 1000000 100000 2 f-5
+gen rand_k 1000000 100000 1 f-6
+gen explicit2 1000000 100000 0 33 126 f-7
+gen explicit3 1000000 100000 0 33 80 126 f-8
+gen all94 1000000 100000 0 f-9
+gen worst 1000000 1000 5 f-10
+gen worst 1000000 10000 10 f-11
+gen worst 1000000 100000 50 f-12
+gen rand_uniform 1000000 1 33 126 f-13
+gen rand_uniform 1000000 1000 33 126 f-14
+gen rand_uniform 1000000 99999 33 126 f-15
+gen rand_uniform 999999 99999 33 126 f-16
+gen rand_uniform 1000000 2 33 126 f-17
+gen rand_uniform 1000000 100000 33 33 f-18
+gen rand_uniform 1000000 100000 33 34 f-19
+gen rand_uniform 1000000 100000 33 35 f-20
+gen rand_k 1000000 50000 3 f-21
+gen rand_k 1000000 100000 50 f-22
+gen worst 1000000 500 94 f-23
+gen rand_uniform 1000000 100000 124 126 f-24
+gen rand_uniform 1000000 100000 33 126 f-25
+# m near sqrt(n) -- catches O(n*m) without paying the m=1e5 price.
+gen rand_uniform 1000000 500 33 126 f-26
+gen rand_uniform 1000000 1000 33 126 f-27
+gen rand_uniform 1000000 2000 33 126 f-28
+gen rand_uniform 1000000 5000 33 126 f-29
+gen rand_k 1000000 1000 5 f-30
+# Adversarial layout for the "reset r + break early" family.
+# pos=0: optimal window at S[0..m-1]    -> forward fast, reverse(S) slow.
+# pos=1: optimal window in the middle   -> both forward AND reverse slow.
+# pos=2: optimal window at S[n-m..n-1]  -> forward slow, reverse(S) fast.
+gen decoy 1000000 50 0 f-31
+gen decoy 1000000 50 1 f-32
+gen decoy 1000000 50 2 f-33
+gen decoy 1000000 5 1 f-34
+gen decoy 1000000 90 1 f-35
