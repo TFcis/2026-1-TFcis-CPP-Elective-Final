@@ -1,31 +1,60 @@
-# TODO: 題目名稱
+# 醉言醉語
 
-<!-- \begin{figure}[h]
+\begin{figure}[h]
 \centering
-\includegraphics[width=2in]{TODO.jpg}
-\caption{TODO: 圖片說明}
-\end{figure} -->
+\includegraphics[width=6in]{main.png}
+\caption{上伊那ぼたん、酔へる姿は百合の花}
+\end{figure}
 
-TODO: 題目敘述
+由於牡丹總是在醉後講話比較中聽，伊吹決定趁兩人一起喝酒的機會偷偷錄下來，方便晚上躲在房間裡用。
+
+不過難免的會把自己酒後打嗝的聲音一併錄進去，這樣就不方便了，想刪掉。牡丹的沒關係，不如說該重點加強一下。
+
+整串錄音檔已被抽象化為一字串 $S$，長度為 $n$。
+
+要被刪掉的打嗝聲以一字串 $A$ 來表達，裡面每一種字元都必須要刪掉。
+
+要重點加強的聲音們以一字串 $B$ 來表達，裡面每一種字元都必須要補強。設該字元為 $c$ 則應補強為 `QcQ`。補強時多出來的字元不在刪除或補強對象中。
+
+若 $A$ 或者 $B$ 應視為空字串時，以 `(null)` 來表達。
+
+求處理後的結果為何。
 
 \clearpage
 
 ## 輸入
-TODO: 輸入說明
+第一行為字串 $S$。  
+第二行為字串 $A$。  
+第三行為字串 $B$。  
 
 ## 輸出
-TODO: 輸出說明
+輸出一行字串，為處理後的結果。
 
 ## 輸入限制
- - TODO: 輸入限制
+ - $1\leq n\leq 10^6$
+ - 視為 ASCII 編碼時 $33\leq S_i, A_i, B_i\leq 126$
+ - 保證 $A$ 和 $B$ 沒有交集
+ - 保證 $A$ 和 $B$ 裡的字元兩兩相異
 
 ## 子任務
 \subtasks
 
 \clearpage
 
-## 範例輸入
+## 範例輸入一
 \testfile{0-01.in}
 
-## 範例輸出
+## 範例輸出一
 \testfile{0-01.out}
+
+## 範例輸入二
+\testfile{0-02.in}
+
+## 範例輸出二
+\testfile{0-02.out}
+
+## 範例輸入三
+\testfile{0-03.in}
+
+## 範例輸出三
+\testfile{0-03.out}
