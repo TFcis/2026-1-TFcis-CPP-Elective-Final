@@ -36,6 +36,7 @@
 		"verdict": "incorrect",
 		"except": {
 			"subtask1": "correct",
+			"subtask2": "correct",
 			"subtask4": "correct"
 		}
 	},
