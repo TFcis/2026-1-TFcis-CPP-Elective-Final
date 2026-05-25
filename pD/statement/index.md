@@ -1,31 +1,59 @@
-# TODO: 題目名稱
+# 下場一定
 
-<!-- \begin{figure}[h]
+\begin{figure}[h]
 \centering
-\includegraphics[width=2in]{TODO.jpg}
-\caption{TODO: 圖片說明}
-\end{figure} -->
+\includegraphics[width=6in]{main.png}
+\caption{GRANBLUE FANTASY: Relink - グランブルーファンタジー}
+\end{figure}
 
-TODO: 題目敘述
+強化要素材、合成要素材，什麼都要素材，但不掉就是不掉。
+
+刷素材刷到快崩潰的你，最後怒挖出自己帳號的隨機表，規劃一下如何效率化。
+
+已知長 $n$ 的字串 $S$，其中 $S_i$ 即為你接下來第 $i$ 場掉落的素材種類。
+
+你需要的素材以長 $m$ 的字串 $T$ 來表達，其中 $T_i$ 為你想要的第 $i$ 件素材的種類。
+
+在遊戲系統上，你能夠進入任務後立刻放棄，這樣你拿不到該場的素材，但省時間；且連續進行戰鬥可以不用回村莊，能節省不必要的讀取。
+
+因此，你希望找到 $S$ 中最短的連續區間，能夠湊足所有你想要的素材。素材的入手順序不重要，缺一不可，但是可以多出來、滿出去沒關係。
 
 \clearpage
 
 ## 輸入
-TODO: 輸入說明
+第一行有 $2$ 個正整數 $n, m$ 以 $1$ 個空白隔開。  
+第二行為字串 $S$。  
+第三行為字串 $T$。
 
 ## 輸出
-TODO: 輸出說明
+輸出一行正整數，表示能湊足所有素材的最小連續戰鬥次數。
+
+保證必定有解。
 
 ## 輸入限制
- - TODO: 輸入限制
+ - $1\leq n\leq 10^6$
+ - $1\leq m\leq 10^5$
+ - 以 ASCII 編碼看待時，$33\leq S_i, T_i\leq 126$
 
 ## 子任務
 \subtasks
 
 \clearpage
 
-## 範例輸入
+## 範例輸入一
 \testfile{0-01.in}
 
-## 範例輸出
+## 範例輸出一
 \testfile{0-01.out}
+
+## 範例輸入二
+\testfile{0-02.in}
+
+## 範例輸出二
+\testfile{0-02.out}
+
+## 範例輸入三
+\testfile{0-03.in}
+
+## 範例輸出三
+\testfile{0-03.out}

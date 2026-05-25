@@ -12,31 +12,31 @@
         "sub1": {
             "index": 1,
             "score": 20,
-            "text": "T 僅包含一種相異字元，且該字元在 S 中出現的次數恰等於 |T|。",
+            "text": "$T$ 僅包含一種相異字元，且該字元在 $S$ 中出現的次數恰等於 $\\lvert T\\rvert$",
             "validators": []
         },
         "sub2": {
             "index": 2,
             "score": 20,
-            "text": "|T| = 2。",
+            "text": "$\\lvert T\\rvert = 2$",
             "validators": []
         },
         "sub3": {
             "index": 3,
             "score": 20,
-            "text": "S 與 T 皆為非遞減字元序列。",
+            "text": "對 $1\\leq i < j\\leq n$ 滿足 $S_i\\leq S_j$；對 $1\\leq i < j\\leq m$ 滿足 $T_i\\leq T_j$",
             "validators": []
         },
         "sub4": {
             "index": 4,
             "score": 20,
-            "text": "|S| <= 2000。",
+            "text": "$\\lvert S\\rvert \\leq 2000$",
             "validators": []
         },
         "full": {
             "index": 5,
             "score": 20,
-            "text": "無額外限制。",
+            "text": "無額外限制",
             "validators": []
         }
     }
