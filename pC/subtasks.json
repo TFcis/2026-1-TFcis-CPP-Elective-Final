@@ -15,7 +15,7 @@
         "subtask1": {
             "index": 1,
             "score": 20,
-            "text": "只有 1 隻史萊姆",
+            "text": "只有 $1$ 隻史萊姆",
             "validators": []
         },
         "subtask2": {
