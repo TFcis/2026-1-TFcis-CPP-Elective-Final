@@ -90,5 +90,13 @@
 		"except": {
 			"samples": "correct"
 		}
+	},
+	"wa_round_too_few.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"samples": "correct",
+			"subtask2": "correct",
+			"subtask3": "correct"
+		}
 	}
 }

@@ -26,6 +26,16 @@ gen single 100 100 90 15
 gen single 50 100 20 16
 gen single 100 50 40 17
 gen single 7 13 25 18
+# Serpentine snakes: expansion path length >> n+m, defeats fixed-round solutions.
+gen snake 5 5 0 19
+gen snake 100 100 0 20
+gen snake 100 100 1 21
+gen snake 99 99 0 22
+gen snake 60 60 0 23
+gen snake 100 50 0 24
+gen snake 50 100 1 25
+gen snake 10 100 0 26
+gen snake 100 10 1 27
 
 # === Subtask 2: n = 1 and no obstacles ===
 @subtask subtask2

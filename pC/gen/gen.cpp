@@ -224,6 +224,33 @@ int main(int argc, char* argv[]) {
 		for (int t = 0; t < k; t++) g[cand[t].first][cand[t].second] = 'S';
 		printGrid(n, m, g);
 	}
+	else if (mode == "snake") {
+		// snake <n> <m> <orient> <seed>
+		// Serpentine corridors: a single slime must wind through alternating gaps,
+		// so the number of expansion rounds is ~ (cells/2), far exceeding n+m.
+		// Defeats solutions that cap the simulation at a fixed n+m rounds.
+		int n = atoi(argv[2]), m = atoi(argv[3]), orient = atoi(argv[4]);
+		vector<string> g(n, string(m, '.'));
+		if (orient == 0) {
+			// Horizontal: every odd row is a wall with one gap that alternates ends.
+			for (int i = 1; i < n; i += 2) {
+				for (int j = 0; j < m; j++) g[i][j] = '#';
+				int kk = i / 2;
+				if (kk % 2 == 0) g[i][m - 1] = '.';
+				else g[i][0] = '.';
+			}
+		} else {
+			// Vertical: every odd column is a wall with one gap that alternates ends.
+			for (int j = 1; j < m; j += 2) {
+				for (int i = 0; i < n; i++) g[i][j] = '#';
+				int kk = j / 2;
+				if (kk % 2 == 0) g[n - 1][j] = '.';
+				else g[0][j] = '.';
+			}
+		}
+		g[0][0] = 'S';
+		printGrid(n, m, g);
+	}
 	else {
 		// Default fallback.
 		int n = 5, m = 5;
