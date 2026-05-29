@@ -44,6 +44,7 @@ Read @about_tps.md first if you need to understand the structure of TPS.
 - All solutions must conform to the C++17 standard.
 - Write approaches for each solution in code, using comment.
 - Write a targeted but non-general solution for each subtask (except the final "no additional constraints" subtask)
+- Any unexpected runtime-related behavior or results in the solutions must be reported, but no modifications should be made on your own initiative. Report the issue and wait for my judgment. Also, this environment is different from the real judge of this contest.
 
 ### subtask
 - In `subtasks.json` always add an extra subtask as front, for sample I/O with score 0. 
