@@ -400,6 +400,37 @@ int main(int argc, char* argv[]) {
 		for (int i = 0; i < m; i++) S[pos + i] = targetChars[i];
 		writeIO(n, m, S, T);
 	}
+	else if (mode == "sub3same") {
+		// sub3same n m c seed
+		// Non-decreasing S and T (sub3). T is the single char c repeated m times
+		// (so T1 == Tm). c appears in S MORE than m times (K > m), with filler
+		// chars 33 below and 126 above so S stays sorted. This is the canonical
+		// counterexample for the "x-p+1 .. y+q-1" binary-search heuristic.
+		int n = atoi(argv[2]);
+		int m = atoi(argv[3]);
+		int c = atoi(argv[4]);
+		if (c < 34 || c > 125) {
+			cerr << "sub3same: c must be in [34,125] (need filler chars below 33+ and above 126-)" << endl;
+			return 1;
+		}
+		if (n <= m) {
+			cerr << "sub3same: need n > m so c can appear more than m times" << endl;
+			return 1;
+		}
+		int K = m + (n - m) / 2;   // count of c in S; m < K <= n
+		if (K <= m) K = m + 1;
+		if (K > n) K = n;
+		int rest = n - K;
+		int low = rest / 2;
+		int high = rest - low;
+		string S;
+		S.reserve(n);
+		S.append(low, (char)33);
+		S.append(K, (char)c);
+		S.append(high, (char)126);
+		string T(m, (char)c);
+		writeIO(n, m, S, T);
+	}
 	else {
 		cerr << "unknown mode: " << mode << endl;
 		return 1;

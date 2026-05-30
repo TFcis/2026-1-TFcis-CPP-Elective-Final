@@ -78,5 +78,8 @@
 		"except": {
 			"sub1": "correct"
 		}
+	},
+	"wa_sub3_bound.cpp": {
+		"verdict": "incorrect"
 	}
 }

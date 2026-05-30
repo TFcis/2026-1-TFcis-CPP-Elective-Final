@@ -19,6 +19,7 @@ Auto-generated from `runlogs/invoke_*.log`.
 | wa_max_min | WA | AC | WA | WA | WA | WA |
 | wa_output_m | WA | WA | WA | WA | WA | WA |
 | wa_output_n | WA | WA | WA | WA | WA | WA |
+| wa_sub3_bound | WA | WA | WA | WA | WA | WA |
 | wa_subsequence | WA | TLE | TLE | TLE | WA | TLE |
 
 Legend: AC = correct, WA = wrong answer, TLE = time limit, RE = runtime error, PC = partially correct, - = no data.

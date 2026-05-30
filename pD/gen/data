@@ -70,6 +70,9 @@ gen sorted_uniform 2000 1000 33 126 s3-15
 gen sorted_uniform 1000000 1000 33 126 s3-16
 gen sorted_k 1000000 1000 10 s3-17
 gen sorted_uniform 1000000 3162 33 126 s3-18
+# All-same T (T1 == Tm) with that char appearing in S MORE than m times.
+# Full length S/T. Defeats the "x-p+1 .. y+q-1" binary-search heuristic.
+gen sub3same 1000000 100000 80 s3-19
 
 # ------------------------------------------------------------------
 # sub4: |S| <= 2000.
