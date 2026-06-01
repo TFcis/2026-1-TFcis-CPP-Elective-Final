@@ -81,5 +81,14 @@
 	},
 	"wa_sub3_bound.cpp": {
 		"verdict": "incorrect"
+	},
+	"tle_binsearch_prefix.cpp": {
+		"verdict": "time_limit",
+		"except": {
+			"sub1": "correct",
+			"sub2": "correct",
+			"sub3": "correct",
+			"sub4": "correct"
+		}
 	}
 }

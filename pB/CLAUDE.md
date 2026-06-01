@@ -6,7 +6,7 @@ Given a string S of length n, and two strings A and B, where all characters in A
 - If a character in S appears in B, say character c, replace it with `QcQ`. Newly inserted Q's are not subject to deletion or replacement.
 
 For example, given S = `abcABCxyz`, A = `cQy`, B = `xaB`,
-the answer is `QaQbAQBQQxQz`.
+the answer is `QaQbAQBQCQxQz`.
 
 For convenience of input, if A or B is exactly `(null)`, treat it as an empty string.
 

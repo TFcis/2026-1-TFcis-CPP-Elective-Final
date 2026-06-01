@@ -10,6 +10,7 @@ Auto-generated from `runlogs/invoke_*.log`.
 | correct_recheck | AC | AC | AC | AC | AC | AC |
 | partial_sub1 | WA | AC | WA | WA | WA | WA |
 | partial_sub2 | WA | WA | AC | WA | WA | WA |
+| tle_binsearch_prefix | AC | AC | AC | AC | AC | TLE |
 | tle_check_m | AC | TLE | AC | TLE | AC | TLE |
 | tle_prefilter | AC | AC | TLE | TLE | TLE | TLE |
 | tle_prefilter_rev | AC | AC | TLE | TLE | AC | TLE |
