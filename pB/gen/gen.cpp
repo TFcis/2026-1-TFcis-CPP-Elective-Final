@@ -203,9 +203,12 @@ int main(int argc, char* argv[]) {
 		string middle = argv[3];
 
 		ensuref(which == "A" || which == "B",
-			"fake_null: which must be A/B");
+			"fake_null: which must be A/B, got %s", which.c_str());
 
 		string fake = "(" + middle;
+
+		ensuref(fake != "(null)",
+			"fake_null: generated string must not be \"(null)\"");
 
 		set<char> seen;
 		for (char c : fake) {
@@ -213,15 +216,14 @@ int main(int argc, char* argv[]) {
 				"fake_null: duplicate character in generated A/B");
 		}
 
-		ensuref(fake != "(null)",
-			"fake_null: generated string must not be \"(null)\"");
-
 		string S = "XYZ";
-		string A, B;
 
+		string A, B;
 		if (which == "A") {
 			A = fake;
-			B = "def";
+			B = "abc";
+			ensuref(set<char>(A.begin(), A.end()).count('a') == 0,
+				"internal check");
 		} else {
 			A = "abc";
 			B = fake;
