@@ -28,6 +28,15 @@ using namespace std;
 //       Emits S = the literal 6-char string "(null)" (which is itself valid
 //       input). Targets wrong solutions that also treat S == "(null)" as
 //       "S is empty" -- the spec only marks A/B that way, never S.
+//   //   edge_null <where> <middle> <a_set> <b_set> [seed_tag]
+//       Emits S with the literal "(null)" at one or both ends.
+//       where:
+//         front -> S = "(null)" + middle
+//         back  -> S = middle + "(null)"
+//         both  -> S = "(null)" + middle + "(null)"
+//       `middle` must be non-empty and not equal to "(null)".
+//       Targets wrong solutions that treat "(null)" as a sentinel
+//       even when it appears as part of S.
 //
 // Tokens for s_pool / t_block / a_set / b_set:
 //   `_`         -> empty set
@@ -147,6 +156,32 @@ int main(int argc, char* argv[]) {
 		for (int i = 0; i < n; i++) S[i] = pickChar(pool);
 		string A = (which == "A" || which == "both") ? string() : string("abcdefgh");
 		string B = (which == "B" || which == "both") ? string() : string("QAZ");
+		emitCase(S, A, B);
+	} else if (mode == "edge_null") {
+		if (argc < 6) {
+			cerr << "edge_null <front|back|both> <middle> <a_set> <b_set> [seed_tag]\n";
+			return 1;
+		}
+		string where = argv[2];
+		string middle = argv[3];
+		string A = resolveAlphabet(argv[4]);
+		string B = resolveAlphabet(argv[5]);
+
+		ensuref(where == "front" || where == "back" || where == "both",
+			"edge_null: where must be front/back/both, got %s", where.c_str());
+		ensuref(!middle.empty(),
+			"edge_null: middle must be non-empty");
+		ensuref(middle != "(null)",
+			"edge_null: middle must not be \"(null)\"");
+
+		string S;
+		if (where == "front")
+			S = "(null)" + middle;
+		else if (where == "back")
+			S = middle + "(null)";
+		else
+			S = "(null)" + middle + "(null)";
+
 		emitCase(S, A, B);
 	} else {
 		cerr << "Unknown mode: " << mode << "\n";

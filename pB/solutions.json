@@ -34,5 +34,11 @@
 	},
 	"wa_null_s.cpp": {
 		"verdict": "incorrect"
+	},
+	"chal294919.cpp": {
+		"verdict": "incorrect",
+		"except": {
+			"subtask5": "correct"
+		}
 	}
 }
