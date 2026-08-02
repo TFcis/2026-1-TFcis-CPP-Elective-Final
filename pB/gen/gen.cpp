@@ -28,7 +28,8 @@ using namespace std;
 //       Emits S = the literal 6-char string "(null)" (which is itself valid
 //       input). Targets wrong solutions that also treat S == "(null)" as
 //       "S is empty" -- the spec only marks A/B that way, never S.
-//   //   edge_null <where> <middle> <a_set> <b_set> [seed_tag]
+//
+//   edge_null <where> <middle> <a_set> <b_set> [seed_tag]
 //       Emits S with the literal "(null)" at one or both ends.
 //       where:
 //         front -> S = "(null)" + middle
@@ -37,6 +38,15 @@ using namespace std;
 //       `middle` must be non-empty and not equal to "(null)".
 //       Targets wrong solutions that treat "(null)" as a sentinel
 //       even when it appears as part of S.
+//
+//   fake_null <which> <middle> [seed_tag]
+//       Generates A or B starting with '(' but not equal to "(null)".
+//       which:
+//         A -> A = "(" + middle, B = "abc"
+//         B -> A = "abc", B = "(" + middle
+//         both -> A and B both start with '(' but are not "(null)"
+//       Targets wrong solutions that only check the first character
+//       '(' to decide whether A/B is the empty string.
 //
 // Tokens for s_pool / t_block / a_set / b_set:
 //   `_`         -> empty set
@@ -183,6 +193,41 @@ int main(int argc, char* argv[]) {
 			S = "(null)" + middle + "(null)";
 
 		emitCase(S, A, B);
+	} else if (mode == "fake_null") {
+		if (argc < 4) {
+			cerr << "fake_null <A|B|both> <middle> [seed_tag]\n";
+			return 1;
+		}
+
+		string which = argv[2];
+		string middle = argv[3];
+
+		ensuref(which == "A" || which == "B" || which == "both",
+			"fake_null: which must be A/B/both, got %s", which.c_str());
+
+		ensuref(!middle.empty(),
+			"fake_null: middle must be non-empty");
+
+		string fake = "(" + middle;
+
+		ensuref(fake != "(null)",
+			"fake_null: generated string must not be \"(null)\"");
+
+		string S = "abcXYZ";
+		string A, B;
+
+		if (which == "A") {
+			A = fake;
+			B = "abc";
+		} else if (which == "B") {
+			A = "abc";
+			B = fake;
+		} else {
+			A = fake;
+			B = "(abc";
+		}
+
+		emitCase(S, A, B); 
 	} else {
 		cerr << "Unknown mode: " << mode << "\n";
 		return 1;
