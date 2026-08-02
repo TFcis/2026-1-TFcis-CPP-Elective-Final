@@ -193,43 +193,6 @@ int main(int argc, char* argv[]) {
 			S = "(null)" + middle + "(null)";
 
 		emitCase(S, A, B);
-	} else if (mode == "fake_null") {
-		if (argc < 4) {
-			cerr << "fake_null <A|B> <middle> [seed_tag]\n";
-			return 1;
-		}
-
-		string which = argv[2];
-		string middle = argv[3];
-
-		ensuref(which == "A" || which == "B",
-			"fake_null: which must be A/B, got %s", which.c_str());
-
-		string fake = "(" + middle;
-
-		ensuref(fake != "(null)",
-			"fake_null: generated string must not be \"(null)\"");
-
-		set<char> seen;
-		for (char c : fake) {
-			ensuref(seen.insert(c).second,
-				"fake_null: duplicate character in generated A/B");
-		}
-
-		string S = "XYZ";
-
-		string A, B;
-		if (which == "A") {
-			A = fake;
-			B = "abc";
-			ensuref(set<char>(A.begin(), A.end()).count('a') == 0,
-				"internal check");
-		} else {
-			A = "abc";
-			B = fake;
-		}
-
-		emitCase(S, A, B);
 	} else {
 		cerr << "Unknown mode: " << mode << "\n";
 		return 1;

@@ -36,8 +36,6 @@ gen random 100 ascii _ z s9
 gen null_s _ a s10
 gen edge_null front abc _ a s11 fadsf
 gen edge_null back xyz _ a s12  fasv
-gen fake_null A nullx s13 fdas
-gen fake_null B nullx s14 123
 
 @subtask subtask3
 # Deletion only, |S| up to 1e6
@@ -73,6 +71,7 @@ gen random 1000000 ascii _ ascii s11
 gen nullabuse 1000 A s12
 gen nullabuse 100000 A s13
 gen nullabuse 1000000 A s14
+manual fake-null-3.in
 
 @subtask subtask5
 # S = T repeated k times, 1 <= |T| <= 8, n = k * |T| <= 1e6.
@@ -126,6 +125,12 @@ gen random 2000 ascii Q lower s10
 gen nullabuse 2000 both s11
 gen nullabuse 2000 A s12
 gen nullabuse 2000 B s13
+manual fake-null-1.in
+manual fake-null-2.in
+manual fake-null-3.in
+manual fake-null-4.in
+manual fake-null-5.in
+manual fake-null-6.in
 
 @subtask full
 @include subtask3
@@ -147,5 +152,3 @@ gen nullabuse 1000000 both s12
 gen edge_null front abcdefghijklmnopqrstuvwxyz ascii _ s13
 gen edge_null back abcdefghijklmnopqrstuvwxyz _ ascii s14
 gen edge_null both abcdefghijklmnopqrstuvwxyz lower upper s15
-gen fake_null A xyz s16
-gen fake_null B xyz s17
