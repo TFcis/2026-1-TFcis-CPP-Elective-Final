@@ -12,92 +12,99 @@
 1-08	 19	gen random 100 lower z _ s8
 1-09	 20	gen random 100 ascii a _ s9
 1-10	 21	gen null_s a _ s10
-2-01	 25	gen random 1 lower _ a s1
-2-02	 26	gen random 1 lower _ b s2
-2-03	 27	gen random 1 alpha _ Q s3
-2-04	 28	gen random 50 lower _ a s4
-2-05	 29	gen random 100 a _ a s5
-2-06	 30	gen random 100 lower _ a s6
-2-07	 31	gen random 100 alpha _ Q s7
-2-08	 32	gen random 100 ascii _ Q s8
-2-09	 33	gen random 100 ascii _ z s9
-2-10	 34	gen null_s _ a s10
-3-01	 39	gen random 1000 lower abcde _ s1
-3-02	 40	gen random 10000 alpha abcdefghij _ s2
-3-03	 41	gen random 100000 lower a _ s3
-3-04	 42	gen random 100000 ascii ABCDEFGHIJKLMNOPQRSTUVWXYZ _ s4
-3-05	 43	gen random 1000000 a a _ s5
-3-06	 44	gen random 1000000 lower a _ s6
-3-07	 45	gen random 1000000 ascii lower _ s7
-3-08	 46	gen random 1000000 alnum digit _ s8
-3-09	 47	gen random 1000000 ascii Q _ s9
-3-10	 48	gen random 1000000 ascii ascii _ s10
-3-11	 49	gen nullabuse 1000 B s11
-3-12	 50	gen nullabuse 100000 B s12
-3-13	 51	gen nullabuse 1000000 B s13
-4-01	 56	gen random 1000 lower _ abcde s1
-4-02	 57	gen random 10000 alpha _ abcdefghij s2
-4-03	 58	gen random 100000 lower _ a s3
-4-04	 59	gen random 100000 ascii _ ABCDEFGHIJKLMNOPQRSTUVWXYZ s4
-4-05	 60	gen random 1000000 a _ a s5
-4-06	 61	gen random 1000000 lower _ a s6
-4-07	 62	gen random 1000000 ascii _ lower s7
-4-08	 63	gen random 1000000 alnum _ digit s8
-4-09	 64	gen random 1000000 ascii _ Q s9
-4-10	 65	gen random 1000000 alnum _ Q s10
-4-11	 66	gen random 1000000 ascii _ ascii s11
-4-12	 67	gen nullabuse 1000 A s12
-4-13	 68	gen nullabuse 100000 A s13
-4-14	 69	gen nullabuse 1000000 A s14
-5-01	 74	gen cyclic a 1000000 _ _ s1
-5-02	 75	gen cyclic a 1000000 a _ s2
-5-03	 76	gen cyclic ab 500000 _ a s3
-5-04	 77	gen cyclic ab 500000 a b s4
-5-05	 78	gen cyclic abc 333333 _ _ s5
-5-06	 79	gen cyclic abcd 250000 _ _ s6
-5-07	 80	gen cyclic abcde 200000 _ _ s7
-5-08	 81	gen cyclic abcdef 166666 _ _ s8
-5-09	 82	gen cyclic abcdefg 142857 _ _ s9
-5-10	 83	gen cyclic abcdefgh 125000 _ _ s10
-5-11	 85	gen cyclic aab 333333 _ _ s11
-5-12	 86	gen cyclic aabc 250000 _ _ s12
-5-13	 87	gen cyclic aaabcde 142857 _ _ s13
-5-14	 88	gen cyclic aabcdefg 125000 _ _ s14
-5-15	 90	gen cyclic ababc 200000 _ _ s15
-5-16	 91	gen cyclic ababcd 166666 _ _ s16
-5-17	 92	gen cyclic abababc 142857 _ _ s17
-5-18	 93	gen cyclic ababcdef 125000 _ _ s18
-5-19	 95	gen cyclic abcabca 142857 _ _ s19
-5-20	 96	gen cyclic abcabcd 142857 _ _ s20
-5-21	 97	gen cyclic abcabcde 125000 _ _ s21
-5-22	 99	gen cyclic aabQ 250000 Q ab s22
-5-23	100	gen cyclic QQabcde 125000 Q abcde s23
-5-24	101	gen cyclic abcQ 250000 _ Q s24
-5-25	102	gen cyclic abcdef 166666 Q abcdef s25
-5-26	103	gen cyclic abcdefgh 125000 abcd efgh s26
-5-27	104	gen null_s _ _ s27
-6-01	110	gen random 2000 lower abc def s1
-6-02	111	gen random 2000 alpha abc def s2
-6-03	112	gen random 2000 ascii ABCDEFG abcdefg s3
-6-04	113	gen random 2000 a a b s4
-6-05	114	gen random 2000 abcQ Q abc s5
-6-06	115	gen random 2000 abcQ abc Q s6
-6-07	116	gen random 2000 ascii lower upper s7
-6-08	117	gen random 2000 alnum digit lower s8
-6-09	118	gen random 2000 alnum digit lower s9
-6-10	119	gen random 2000 ascii Q lower s10
-6-11	120	gen nullabuse 2000 both s11
-6-12	121	gen nullabuse 2000 A s12
-6-13	122	gen nullabuse 2000 B s13
-7-01	129	gen random 1000000 lower abc def s1
-7-02	130	gen random 1000000 alpha abc def s2
-7-03	131	gen random 1000000 ascii lower upper s3
-7-04	132	gen random 1000000 ascii ABCDEFGHIJ abcdefghij s4
-7-05	133	gen random 1000000 alnum digit lower s5
-7-06	134	gen random 1000000 abcQ Q abc s6
-7-07	135	gen random 1000000 abcQ abc Q s7
-7-08	136	gen random 1000000 a a b s8
-7-09	137	gen random 1000000 ascii ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz s9
-7-10	138	gen random 1000000 ascii Q lower s10
-7-11	139	gen nullabuse 1000000 both s11
-7-12	140	gen nullabuse 1000000 both s12
+1-11	 22	gen edge_null front abc a _ s11 12312
+1-12	 23	gen edge_null back xyz a _ s12 sdafa
+2-01	 27	gen random 1 lower _ a s1
+2-02	 28	gen random 1 lower _ b s2
+2-03	 29	gen random 1 alpha _ Q s3
+2-04	 30	gen random 50 lower _ a s4
+2-05	 31	gen random 100 a _ a s5
+2-06	 32	gen random 100 lower _ a s6
+2-07	 33	gen random 100 alpha _ Q s7
+2-08	 34	gen random 100 ascii _ Q s8
+2-09	 35	gen random 100 ascii _ z s9
+2-10	 36	gen null_s _ a s10
+2-11	 37	gen edge_null front abc _ a s11 fadsf
+2-12	 38	gen edge_null back xyz _ a s12  fasv
+3-01	 43	gen random 1000 lower abcde _ s1
+3-02	 44	gen random 10000 alpha abcdefghij _ s2
+3-03	 45	gen random 100000 lower a _ s3
+3-04	 46	gen random 100000 ascii ABCDEFGHIJKLMNOPQRSTUVWXYZ _ s4
+3-05	 47	gen random 1000000 a a _ s5
+3-06	 48	gen random 1000000 lower a _ s6
+3-07	 49	gen random 1000000 ascii lower _ s7
+3-08	 50	gen random 1000000 alnum digit _ s8
+3-09	 51	gen random 1000000 ascii Q _ s9
+3-10	 52	gen random 1000000 ascii ascii _ s10
+3-11	 53	gen nullabuse 1000 B s11
+3-12	 54	gen nullabuse 100000 B s12
+3-13	 55	gen nullabuse 1000000 B s13
+4-01	 60	gen random 1000 lower _ abcde s1
+4-02	 61	gen random 10000 alpha _ abcdefghij s2
+4-03	 62	gen random 100000 lower _ a s3
+4-04	 63	gen random 100000 ascii _ ABCDEFGHIJKLMNOPQRSTUVWXYZ s4
+4-05	 64	gen random 1000000 a _ a s5
+4-06	 65	gen random 1000000 lower _ a s6
+4-07	 66	gen random 1000000 ascii _ lower s7
+4-08	 67	gen random 1000000 alnum _ digit s8
+4-09	 68	gen random 1000000 ascii _ Q s9
+4-10	 69	gen random 1000000 alnum _ Q s10
+4-11	 70	gen random 1000000 ascii _ ascii s11
+4-12	 71	gen nullabuse 1000 A s12
+4-13	 72	gen nullabuse 100000 A s13
+4-14	 73	gen nullabuse 1000000 A s14
+5-01	 78	gen cyclic a 1000000 _ _ s1
+5-02	 79	gen cyclic a 1000000 a _ s2
+5-03	 80	gen cyclic ab 500000 _ a s3
+5-04	 81	gen cyclic ab 500000 a b s4
+5-05	 82	gen cyclic abc 333333 _ _ s5
+5-06	 83	gen cyclic abcd 250000 _ _ s6
+5-07	 84	gen cyclic abcde 200000 _ _ s7
+5-08	 85	gen cyclic abcdef 166666 _ _ s8
+5-09	 86	gen cyclic abcdefg 142857 _ _ s9
+5-10	 87	gen cyclic abcdefgh 125000 _ _ s10
+5-11	 89	gen cyclic aab 333333 _ _ s11
+5-12	 90	gen cyclic aabc 250000 _ _ s12
+5-13	 91	gen cyclic aaabcde 142857 _ _ s13
+5-14	 92	gen cyclic aabcdefg 125000 _ _ s14
+5-15	 94	gen cyclic ababc 200000 _ _ s15
+5-16	 95	gen cyclic ababcd 166666 _ _ s16
+5-17	 96	gen cyclic abababc 142857 _ _ s17
+5-18	 97	gen cyclic ababcdef 125000 _ _ s18
+5-19	 99	gen cyclic abcabca 142857 _ _ s19
+5-20	100	gen cyclic abcabcd 142857 _ _ s20
+5-21	101	gen cyclic abcabcde 125000 _ _ s21
+5-22	103	gen cyclic aabQ 250000 Q ab s22
+5-23	104	gen cyclic QQabcde 125000 Q abcde s23
+5-24	105	gen cyclic abcQ 250000 _ Q s24
+5-25	106	gen cyclic abcdef 166666 Q abcdef s25
+5-26	107	gen cyclic abcdefgh 125000 abcd efgh s26
+5-27	108	gen null_s _ _ s27
+6-01	114	gen random 2000 lower abc def s1
+6-02	115	gen random 2000 alpha abc def s2
+6-03	116	gen random 2000 ascii ABCDEFG abcdefg s3
+6-04	117	gen random 2000 a a b s4
+6-05	118	gen random 2000 abcQ Q abc s5
+6-06	119	gen random 2000 abcQ abc Q s6
+6-07	120	gen random 2000 ascii lower upper s7
+6-08	121	gen random 2000 alnum digit lower s8
+6-09	122	gen random 2000 alnum digit lower s9
+6-10	123	gen random 2000 ascii Q lower s10
+6-11	124	gen nullabuse 2000 both s11
+6-12	125	gen nullabuse 2000 A s12
+6-13	126	gen nullabuse 2000 B s13
+7-01	133	gen random 1000000 lower abc def s1
+7-02	134	gen random 1000000 alpha abc def s2
+7-03	135	gen random 1000000 ascii lower upper s3
+7-04	136	gen random 1000000 ascii ABCDEFGHIJ abcdefghij s4
+7-05	137	gen random 1000000 alnum digit lower s5
+7-06	138	gen random 1000000 abcQ Q abc s6
+7-07	139	gen random 1000000 abcQ abc Q s7
+7-08	140	gen random 1000000 a a b s8
+7-09	141	gen random 1000000 ascii ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz s9
+7-10	142	gen random 1000000 ascii Q lower s10
+7-11	143	gen nullabuse 1000000 both s11
+7-12	144	gen nullabuse 1000000 both s12
+7-13	145	gen edge_null front abcdefghijklmnopqrstuvwxyz ascii _ s13
+7-14	146	gen edge_null back abcdefghijklmnopqrstuvwxyz _ ascii s14
+7-15	147	gen edge_null both abcdefghijklmnopqrstuvwxyz lower upper s15
