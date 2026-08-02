@@ -71,7 +71,6 @@ gen random 1000000 ascii _ ascii s11
 gen nullabuse 1000 A s12
 gen nullabuse 100000 A s13
 gen nullabuse 1000000 A s14
-manual fake-null-3.in
 
 @subtask subtask5
 # S = T repeated k times, 1 <= |T| <= 8, n = k * |T| <= 1e6.
