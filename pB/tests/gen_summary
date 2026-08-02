@@ -93,18 +93,24 @@
 6-11	124	gen nullabuse 2000 both s11
 6-12	125	gen nullabuse 2000 A s12
 6-13	126	gen nullabuse 2000 B s13
-7-01	133	gen random 1000000 lower abc def s1
-7-02	134	gen random 1000000 alpha abc def s2
-7-03	135	gen random 1000000 ascii lower upper s3
-7-04	136	gen random 1000000 ascii ABCDEFGHIJ abcdefghij s4
-7-05	137	gen random 1000000 alnum digit lower s5
-7-06	138	gen random 1000000 abcQ Q abc s6
-7-07	139	gen random 1000000 abcQ abc Q s7
-7-08	140	gen random 1000000 a a b s8
-7-09	141	gen random 1000000 ascii ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz s9
-7-10	142	gen random 1000000 ascii Q lower s10
-7-11	143	gen nullabuse 1000000 both s11
-7-12	144	gen nullabuse 1000000 both s12
-7-13	145	gen edge_null front abcdefghijklmnopqrstuvwxyz ascii _ s13
-7-14	146	gen edge_null back abcdefghijklmnopqrstuvwxyz _ ascii s14
-7-15	147	gen edge_null both abcdefghijklmnopqrstuvwxyz lower upper s15
+6-14	127	manual fake-null-1.in
+6-15	128	manual fake-null-2.in
+6-16	129	manual fake-null-3.in
+6-17	130	manual fake-null-4.in
+6-18	131	manual fake-null-5.in
+6-19	132	manual fake-null-6.in
+7-01	139	gen random 1000000 lower abc def s1
+7-02	140	gen random 1000000 alpha abc def s2
+7-03	141	gen random 1000000 ascii lower upper s3
+7-04	142	gen random 1000000 ascii ABCDEFGHIJ abcdefghij s4
+7-05	143	gen random 1000000 alnum digit lower s5
+7-06	144	gen random 1000000 abcQ Q abc s6
+7-07	145	gen random 1000000 abcQ abc Q s7
+7-08	146	gen random 1000000 a a b s8
+7-09	147	gen random 1000000 ascii ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz s9
+7-10	148	gen random 1000000 ascii Q lower s10
+7-11	149	gen nullabuse 1000000 both s11
+7-12	150	gen nullabuse 1000000 both s12
+7-13	151	gen edge_null front abcdefghijklmnopqrstuvwxyz ascii _ s13
+7-14	152	gen edge_null back abcdefghijklmnopqrstuvwxyz _ ascii s14
+7-15	153	gen edge_null both abcdefghijklmnopqrstuvwxyz lower upper s15
