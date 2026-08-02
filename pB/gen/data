@@ -21,8 +21,6 @@ gen random 100 ascii a _ s9
 gen null_s a _ s10
 gen edge_null front abc a _ s11 12312
 gen edge_null back xyz a _ s12 sdafa
-gen fake_null A nullx s13 1fads
-gen fake_null B nullx s14 czx
 
 @subtask subtask2
 # |S| <= 100, replacement only, |B| = 1
@@ -149,4 +147,5 @@ gen nullabuse 1000000 both s12
 gen edge_null front abcdefghijklmnopqrstuvwxyz ascii _ s13
 gen edge_null back abcdefghijklmnopqrstuvwxyz _ ascii s14
 gen edge_null both abcdefghijklmnopqrstuvwxyz lower upper s15
-gen fake_null both nullxxxxxxxx s16
+gen fake_null A xyz s16
+gen fake_null B xyz s17

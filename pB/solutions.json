@@ -36,9 +36,9 @@
 		"verdict": "incorrect"
 	},
 	"chal294919.cpp": {
-		"verdict": "incorrect",
+		"verdict": "correct",
 		"except": {
-			"subtask5": "correct"
+			"full": "incorrect"
 		}
 	}
 }

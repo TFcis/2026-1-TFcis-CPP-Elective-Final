@@ -195,39 +195,39 @@ int main(int argc, char* argv[]) {
 		emitCase(S, A, B);
 	} else if (mode == "fake_null") {
 		if (argc < 4) {
-			cerr << "fake_null <A|B|both> <middle> [seed_tag]\n";
+			cerr << "fake_null <A|B> <middle> [seed_tag]\n";
 			return 1;
 		}
 
 		string which = argv[2];
 		string middle = argv[3];
 
-		ensuref(which == "A" || which == "B" || which == "both",
-			"fake_null: which must be A/B/both, got %s", which.c_str());
-
-		ensuref(!middle.empty(),
-			"fake_null: middle must be non-empty");
+		ensuref(which == "A" || which == "B",
+			"fake_null: which must be A/B");
 
 		string fake = "(" + middle;
+
+		set<char> seen;
+		for (char c : fake) {
+			ensuref(seen.insert(c).second,
+				"fake_null: duplicate character in generated A/B");
+		}
 
 		ensuref(fake != "(null)",
 			"fake_null: generated string must not be \"(null)\"");
 
-		string S = "abcXYZ";
+		string S = "XYZ";
 		string A, B;
 
 		if (which == "A") {
 			A = fake;
-			B = "abc";
-		} else if (which == "B") {
+			B = "def";
+		} else {
 			A = "abc";
 			B = fake;
-		} else {
-			A = fake;
-			B = "(abc";
 		}
 
-		emitCase(S, A, B); 
+		emitCase(S, A, B);
 	} else {
 		cerr << "Unknown mode: " << mode << "\n";
 		return 1;
